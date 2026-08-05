@@ -347,3 +347,10 @@ footer {
 footer h3 {
     color: var(--accent);
 }
+
+
+.project-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
