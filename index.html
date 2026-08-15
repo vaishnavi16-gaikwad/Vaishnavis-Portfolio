@@ -111,7 +111,7 @@
 
         <div class="hero-right">
 
-            <img src="assets/images/vaishnavi profile.jpeg.jpeg"
+            <img src="assets/images/VAISHNAVI'S PHOTO.jpeg"
                 alt="Vaishnavi">
 
         </div>
@@ -382,29 +382,50 @@
 
     <!--================ CONTACT =================-->
 
-    <section class="contact" id="contact">
+    <!--================ CONTACT =================-->
 
-        <h2 class="title">Contact Me</h2>
+<section class="contact" id="contact">
 
-        <form>
+    <h2 class="title">Contact Me</h2>
 
-            <input type="text" placeholder="Your Name">
+    <form id="contact-form">
 
-            <input type="email" placeholder="Your Email">
+        <input
+            type="text"
+            name="from_name"
+            placeholder="Your Name"
+            required>
 
-            <input type="text" placeholder="Subject">
+        <input
+            type="email"
+            name="from_email"
+            placeholder="Your Email"
+            required>
 
-            <textarea rows="6" placeholder="Message"></textarea>
+        <input
+            type="text"
+            name="subject"
+            placeholder="Subject"
+            required>
 
-            <button class="btn">Send Message</button>
+        <textarea
+            name="message"
+            rows="6"
+            placeholder="Your Message"
+            required></textarea>
 
-        </form>
+        <button type="submit" class="btn">
+            Send Message
+        </button>
 
-    </section>
+        <p id="status-message"></p>
+
+    </form>
+
+</section>
 
 
-
-    <!--================ FOOTER =================-->
+<!--================ FOOTER =================-->
 
     <footer>
 
@@ -420,11 +441,16 @@
 
     <!-- JS -->
 
-    <script src="js/script.js"></script>
+    <!-- JS -->
 
-    <script src="js/typing.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 
-    <script src="js/scroll.js"></script>
+<script src="js/contact.js"></script>
+
+<script src="js/script.js"></script>
+<script src="js/typing.js"></script>
+<script src="js/scroll.js"></script>
+
 
 </body>
 

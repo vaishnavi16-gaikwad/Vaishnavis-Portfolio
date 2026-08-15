@@ -22,6 +22,7 @@ body {
     overflow-x: hidden;
 }
 
+/* ===== SECTION TITLE ===== */
 .title {
     text-align: center;
     font-size: 2.2rem;
@@ -72,7 +73,7 @@ header {
     color: var(--text-light);
     text-decoration: none;
     font-weight: 500;
-    transition: color 0.3s;
+    transition: color 0.3s ease;
 }
 
 .nav-links a:hover {
@@ -85,13 +86,15 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 60px;
+    padding: 100px 60px 60px;
     max-width: 1300px;
     margin: 0 auto;
+    gap: 60px;
 }
 
 .hero-left {
     max-width: 600px;
+    flex: 1;
 }
 
 .hero-left h4 {
@@ -123,20 +126,22 @@ header {
     margin-bottom: 30px;
 }
 
+/* ===== HERO BUTTONS ===== */
 .hero-btn {
     display: flex;
     gap: 20px;
     margin-bottom: 30px;
 }
 
-.btn, .btn2 {
+.btn,
+.btn2 {
     padding: 12px 28px;
     border-radius: 30px;
     text-decoration: none;
     font-weight: 600;
     border: none;
     cursor: pointer;
-    transition: transform 0.3s;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .btn {
@@ -150,28 +155,52 @@ header {
     background: transparent;
 }
 
-.btn:hover, .btn2:hover {
+.btn:hover,
+.btn2:hover {
     transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0, 217, 255, 0.2);
 }
 
+/* ===== SOCIAL ICONS ===== */
 .social-icons a {
     color: var(--text-light);
     font-size: 1.3rem;
     margin-right: 20px;
-    transition: color 0.3s;
+    transition: color 0.3s ease, transform 0.3s ease;
 }
 
 .social-icons a:hover {
     color: var(--accent);
+    transform: translateY(-3px);
+}
+
+/* ===== HERO PROFILE IMAGE ===== */
+/* Circle increased from 260px -> 320px */
+.hero-right {
+    flex: 0 0 380px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .hero-right img {
-    width: 260px;
-    height: 260px;
+    width: 320px;
+    height: 320px;
     object-fit: cover;
+    object-position: center 20%;   /* <-- ye line add karo */
     border-radius: 50%;
     border: 3px solid var(--accent);
-    box-shadow: 0 0 25px rgba(0, 217, 255, 0.35);
+    box-shadow:
+        0 0 25px rgba(0, 217, 255, 0.35),
+        0 0 50px rgba(0, 217, 255, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hero-right img:hover {
+    transform: scale(1.03);
+    box-shadow:
+        0 0 30px rgba(0, 217, 255, 0.5),
+        0 0 60px rgba(0, 217, 255, 0.2);
 }
 
 /* ===== ABOUT ===== */
@@ -232,7 +261,7 @@ header {
     border-radius: 12px;
     font-weight: 500;
     border: 1px solid rgba(0, 217, 255, 0.2);
-    transition: transform 0.3s, border-color 0.3s;
+    transition: transform 0.3s ease, border-color 0.3s ease;
 }
 
 .card:hover {
@@ -257,7 +286,7 @@ header {
     background: var(--bg-card);
     border-radius: 15px;
     overflow: hidden;
-    transition: transform 0.3s;
+    transition: transform 0.3s ease;
 }
 
 .project-card:hover {
@@ -348,9 +377,189 @@ footer h3 {
     color: var(--accent);
 }
 
-
+/* ===== PROJECT LINK ===== */
 .project-link {
     text-decoration: none;
     color: inherit;
     display: block;
+}
+
+/* ===== STATUS MESSAGE ===== */
+#status-message {
+    margin-top: 15px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* ================================================= */
+/* ===== RESPONSIVE DESIGN - TABLET ===== */
+/* ================================================= */
+
+@media (max-width: 900px) {
+
+    .navbar {
+        padding: 18px 30px;
+    }
+
+    .nav-links {
+        gap: 20px;
+    }
+
+    .hero {
+        padding: 100px 40px 60px;
+        gap: 30px;
+    }
+
+    .hero-left h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-right {
+        flex: 0 0 340px;
+    }
+
+    .hero-right img {
+        width: 290px;
+        height: 290px;
+    }
+}
+
+/* ================================================= */
+/* ===== RESPONSIVE DESIGN - MOBILE ===== */
+/* ================================================= */
+
+@media (max-width: 700px) {
+
+    /* Navbar */
+    .navbar {
+        padding: 15px 20px;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .nav-links {
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .nav-links a {
+        font-size: 0.85rem;
+    }
+
+    /* Hero */
+    .hero {
+        min-height: auto;
+        flex-direction: column;
+        text-align: center;
+        padding: 150px 20px 70px;
+        gap: 50px;
+    }
+
+    .hero-left {
+        max-width: 100%;
+    }
+
+    .hero-left h1 {
+        font-size: 2.2rem;
+    }
+
+    .hero-left h2 {
+        font-size: 1.25rem;
+    }
+
+    .hero-left p {
+        font-size: 0.95rem;
+    }
+
+    .hero-btn {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .social-icons {
+        text-align: center;
+    }
+
+    /* Profile circle */
+    .hero-right {
+        flex: none;
+        width: 100%;
+    }
+
+    .hero-right img {
+        width: 280px;
+        height: 280px;
+    }
+
+    /* About */
+    .about {
+        padding: 80px 20px;
+    }
+
+    .about-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 30px;
+    }
+
+    .about-image img {
+        width: 250px;
+    }
+
+    /* Skills */
+    .skills {
+        padding: 80px 20px;
+    }
+
+    /* Projects */
+    .projects {
+        padding: 80px 20px;
+    }
+
+    /* Education */
+    .education {
+        padding: 80px 20px;
+    }
+
+    /* Contact */
+    .contact {
+        padding: 80px 20px;
+    }
+
+    .title {
+        font-size: 1.8rem;
+    }
+}
+
+/* ================================================= */
+/* ===== SMALL MOBILE ===== */
+/* ================================================= */
+
+@media (max-width: 400px) {
+
+    .hero-left h1 {
+        font-size: 1.9rem;
+    }
+
+    .hero-right img {
+    width: 260px;
+    height: 260px;
+    object-fit: cover;
+    object-position: center 85%;
+    border-radius: 50%;
+    border: 3px solid var(--accent);
+    box-shadow: 0 0 25px rgba(0, 217, 255, 0.35);
+}
+
+    .btn,
+    .btn2 {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+
+    .nav-links {
+        gap: 10px;
+    }
 }
