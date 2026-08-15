@@ -563,3 +563,43 @@ footer h3 {
         gap: 10px;
     }
 }
+
+/* .contact iframe {
+    display: block;
+    margin: 0 auto;
+    border-radius: 15px;
+    box-shadow: 0 0 25px rgba(0, 217, 255, 0.2);
+    border: 1px solid rgba(0, 217, 255, 0.2);
+} */
+
+
+/* ===== CONTACT FORM (Google Form iframe) ===== */
+.contact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 100px 60px;
+}
+
+.contact iframe {
+    display: block;
+    width: 100%;
+    max-width: 650px;
+    height: 900px;
+    margin: 40px auto 0;
+    border: none;
+    border-radius: 20px;
+    background: var(--bg-card);
+    box-shadow:
+        0 0 30px rgba(0, 217, 255, 0.25),
+        0 0 60px rgba(123, 47, 247, 0.15);
+    transition: box-shadow 0.3s ease;
+}
+
+.contact iframe:hover {
+    box-shadow:
+        0 0 40px rgba(0, 217, 255, 0.4),
+        0 0 70px rgba(123, 47, 247, 0.2);
+}
